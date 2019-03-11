@@ -1,0 +1,19 @@
+.leaderboard-cont {
+  border: 1px solid white;
+  height: 500px;
+  overflow-y: scroll;
+  margin: 30px;
+}
+
+.custom_table {
+}
+
+html,
+body {
+  background: linear-gradient(to bottom left, #000066 0%, #666699 100%);
+}
+#leaderboard-container {
+}
+
+#leaderboardBody {
+}

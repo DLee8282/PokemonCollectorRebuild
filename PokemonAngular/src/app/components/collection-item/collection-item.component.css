@@ -1,0 +1,12 @@
+#collectionItem {
+  border: 1px solid white;
+  margin: 10px;
+}
+.pokemon-card-outer {
+  margin: 15px;
+  height: 320px;
+  width: 125;
+  background-color: grey;
+  border: 5px solid yellow;
+  border-radius: 18px;
+}

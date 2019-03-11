@@ -1,0 +1,92 @@
+<div class="container ">
+  <div class="row">
+    <div class="col">
+      <div class="shop-form-scroll">
+        <form #buyForm="ngForm" (ngSubmit)="onBuySubmit()" novalidate>
+          <div class="radio-card-grid">
+            <div
+              class="form-check radio-form-item"
+              *ngFor="let pokemon of pokemonArr"
+            >
+              <input
+                class="form-check-input"
+                type="radio"
+                #pokemonCard="ngModel"
+                name="gridRadios"
+                value="{{ pokemon.pokemonId }}"
+                checked
+                [(ngModel)]="pokemonModel.pokemonId"
+              />
+              <div class="pokemon-card-outer">
+                <label class="form-check-label" for="gridRadios1">
+                  {{ pokemon.pokemonName }}
+                </label>
+                <img class="pokemon-card-img" src="{{ pokemon.URL }}" />
+                <div class="pokemon-card-info-cont">
+                  <div>Type: {{ pokemon.pokemonType }}</div>
+                  <br />
+                  <div>Cost: {{ pokemon.pokemonRarity }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            data-toggle="modal"
+            data-target="#newpokemonModal"
+            class="shop-buy-btn"
+            type="submit"
+          >
+            Buy
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="newpokemonModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="newpokemonModel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div
+      class="modal-content justify-content-center"
+      id="newPokemon-Modal-Content"
+    >
+      <div class="modal-body justify-content-center" id="newPokemon-Modal-Body">
+        <img
+          src="../../../assets/images/pokeball.png"
+          id="generate-pokemon-pokeball"
+          class="mb-3 animated shake"
+          (click)="onBallClick()"
+        />
+        <div
+          class="pokemon-card-outer text-center d-none "
+          id="generate-pokemon-card"
+        >
+          <!-- *ngFor="let pokemon of pokemonArr" -->
+          <h4 class="pokemon-card-name">{{ this.pokemonName }}</h4>
+
+          <img src="{{ this.pokemonURL }}" class="pokemon-card-img" />
+          <div class="pokemon-card-info-cont">
+            <p>Type: {{ this.pokemonType }}</p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="newPokemon-Modal-Buttons "
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col" id="collection-section-header">
+      <img
+        class="animated jello"
+        id="pokedex-heading"
+        src="https://fontmeme.com/permalink/190224/f87c04db0b54e3b89caa3d1d3ee405fb.png"
+        alt="pokemon-font"
+      />
+      <div id="card-gallery-grid">
+        <div
+          class="pokemon-card-outer text-center"
+          *ngFor="let pokemon of pokemonArr"
+        >
+          <h4 class="pokemon-card-name">{{ pokemon.pokemonName }}</h4>
+          <img src="{{ pokemon.URL }}" class="pokemon-card-img" />
+          <div class="pokemon-card-info-cont">
+            <p>Type: {{ pokemon.pokemonType }}</p>
+            <p>HP: {{ pokemon.hp }}</p>
+
+            <p>Attack: {{ pokemon.attack }}</p>
+            <p>Defense: {{ pokemon.defense }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

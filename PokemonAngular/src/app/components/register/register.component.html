@@ -1,0 +1,128 @@
+<app-nav-bar></app-nav-bar>
+<div class="container" id="login-form-cont">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form
+        #registerForm="ngForm"
+        (ngSubmit)="onSubmit()"
+        novalidate
+        id="login-form"
+      >
+        <div class="form-group">
+          <label for="FIRSTNAME">Enter Firstname</label>
+          <input
+            type="text"
+            required
+            #firstName="ngModel"
+            name="FIRSTNAME"
+            class="form-control"
+            [class.is-valid]="firstName.valid"
+            [class.is-invalid]="firstName.invalid && firstName.touched"
+            [(ngModel)]="userModel.firstName"
+          />
+          <small
+            class="text-danger"
+            [class.d-none]="firstName.valid || firstName.untouched"
+          >
+            Firstname is required
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="LASTNAME">Enter Lastname</label>
+          <input
+            type="text"
+            required
+            #lastName="ngModel"
+            name="LASTNAME"
+            class="form-control"
+            [class.is-valid]="lastName.valid"
+            [class.is-invalid]="lastName.invalid && lastName.touched"
+            [(ngModel)]="userModel.lastName"
+          />
+          <small
+            class="text-danger"
+            [class.d-none]="lastName.valid || lastName.untouched"
+          >
+            Lastname is required
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="USERNAME">Username</label>
+          <input
+            type="text"
+            required
+            #username="ngModel"
+            name="USERNAME"
+            class="form-control"
+            [class.is-valid]="username.valid"
+            [class.is-invalid]="username.invalid && username.touched"
+            [(ngModel)]="userModel.username"
+          />
+          <small
+            class="text-danger"
+            [class.d-none]="username.valid || username.untouched"
+            >Username is required.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="PASSWORD">Password</label>
+          <input
+            type="password"
+            required
+            #password="ngModel"
+            name="PASSWORD"
+            class="form-control"
+            [class.is-valid]="password.valid"
+            [class.is-invalid]="password.invalid && password.touched"
+            [(ngModel)]="userModel.password"
+          />
+          <small
+            class="text-danger"
+            [class.d-none]="password.valid || password.untouched"
+            >Password is requried.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="EMAIL">Email</label>
+          <input
+            type="email"
+            required
+            #email="ngModel"
+            name="EMAIL"
+            class="form-control"
+            [class.is-valid]="email.valid"
+            [class.is-invalid]="email.invalid && email.touched"
+            [(ngModel)]="userModel.email"
+          />
+          <small
+            class="text-danger"
+            [class.d-none]="email.valid || email.untouched"
+            >Email is requried.</small
+          >
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show d-none"
+          id="login-alert"
+          role="alert"
+        >
+          <img src="http://i64.tinypic.com/2nhqjbp.png" alt="" />
+          <strong>Erm...</strong> What was your name again...?
+          <button
+            id="login-alert"
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="onAlertClose()"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <button class="btn btn-block" type="submit" id="login-form-btn">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

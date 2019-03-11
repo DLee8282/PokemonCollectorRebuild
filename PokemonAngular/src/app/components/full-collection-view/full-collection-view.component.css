@@ -1,0 +1,51 @@
+#fullCollectionView {
+  border: 2px solid white;
+}
+
+#collection-section-header {
+  background: linear-gradient(to bottom left, #000066 0%, #666699 100%);
+  text-align: center;
+  min-height: 500px;
+}
+
+#pokedex-heading {
+  padding: 10px;
+}
+
+.pokemon-card-name {
+  color: white;
+}
+
+/* .pokemon-card-outer {
+  margin: 15px;
+  height: 320px;
+  width: 125;
+  text-align: center;
+  background: linear-gradient(to top, #990033 0%, #cc0000 65%);
+  border: 5px solid yellow !important;
+  border-radius: 18px;
+}
+
+.pokemon-card-outer img {
+  border: 1px solid white;
+  background: linear-gradient(to bottom left, #000066 0%, #666699 100%);
+}
+
+#card-gallery-grid {
+  padding-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+#card-gallery-grid .pokemon-card-outer {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  transition: all 0.2s;
+}
+
+#card-gallery-grid .pokemon-card-outer:hover {
+  transform: scale(1.25);
+} */

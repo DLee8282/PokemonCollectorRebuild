@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+  <h5>Score {{ score }}</h5>
+  <h5>{{ userName }}</h5>
+  <h5>Credits {{ credits }}</h5>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" routerLink="/userhome"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/shop">Shop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/redeem">Redeem</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="">View Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="">Edit Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

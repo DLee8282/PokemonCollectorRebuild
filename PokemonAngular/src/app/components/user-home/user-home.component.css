@@ -1,0 +1,138 @@
+html {
+  background: linear-gradient(to top, #990033 0%, #cc0000 65%);
+}
+
+body {
+  background: linear-gradient(to top, #990033 0%, #cc0000 65%);
+}
+
+#userInfoList {
+  list-style: none;
+}
+
+.userInfoItem {
+  color: white;
+}
+
+#logged-nav-bar {
+  background: linear-gradient(to top, #990033 0%, #cc0000 65%);
+  color: white;
+}
+.customLink {
+  style: none;
+  color: white;
+}
+
+.pokemon-card-outer {
+  margin: 15px;
+  height: 320px;
+  width: 50%;
+  text-align: center;
+  background: linear-gradient(to top, #990033 0%, #cc0000 65%);
+  border: 5px solid yellow !important;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-card-outer img {
+}
+
+#card-gallery-grid {
+  padding-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.pokemon-card-outer {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  max-width: 50% !important;
+  transition: all 0.2s;
+}
+
+#card-gallery-grid .pokemon-card-outer:hover {
+  transform: scale(1.25);
+}
+
+.pokemon-card-name {
+  color: black;
+}
+.pokemon-card-img {
+  border: 2px solid yellow;
+  background: linear-gradient(to bottom left, #000066 0%, #666699 100%);
+  display: flex;
+  width: 50%;
+}
+
+.pokemon-card-info-cont {
+  margin-top: 10px;
+  font-size: 18px;
+  background-color: rgba(244, 248, 6, 0.952);
+
+  color: black;
+  width: 70%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+#newPokemonModal {
+  border: none;
+}
+#newPokemon-Modal-Header {
+}
+
+#newPokemon-x-button {
+  color: white;
+}
+
+#newPokemon-Modal-Content {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+#newPokemon-Modal-Body {
+  background-color: transparent !important;
+  border: none !important;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+#newPokemon-Modal-Footer {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.newPokemon-Modal-Buttons {
+  background: linear-gradient(to top, #990033 0%, #cc0000 65%);
+  border: 2px solid yellow !important;
+  color: black;
+  width: 100%;
+}
+
+.newPokemon-Generate-Button {
+  background: linear-gradient(to top, #990033 0%, #cc0000 65%);
+  border: 2px solid yellow !important;
+  color: white;
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+#draw-button-contianer {
+  background: linear-gradient(to bottom left, #000066 0%, #666699 100%);
+}
+
+#catch-em-all-header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pokemon-card-name {
+  color: white;
+}

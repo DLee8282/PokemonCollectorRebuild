@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  background: linear-gradient(to top, #990033 0%, #cc0000 65%);
+}
+body {
+}
+
+#routeroutlet {
+}
+
+.logged-nav {
+  background: linear-gradient(to top, #990033 0%, #cc0000 65%);
+  color: white;
+}
+
+/*********************************************************Global Styles for PokemonCards**********************/
+
+.pokemon-card-outer {
+  margin: 15px;
+  height: 320px;
+  width: 125;
+  text-align: center;
+  background: linear-gradient(to top, #990033 0%, #cc0000 65%);
+  border: 5px solid yellow !important;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-card-outer img {
+}
+
+#card-gallery-grid {
+  padding-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+#card-gallery-grid .pokemon-card-outer {
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  color: white;
+  transition: all 0.2s;
+}
+
+#card-gallery-grid .pokemon-card-outer:hover {
+  transform: scale(1.25);
+}
+
+.pokemon-card-name {
+  color: black;
+}
+.pokemon-card-img {
+  border: 2px solid yellow;
+  background: linear-gradient(to bottom left, #000066 0%, #666699 100%);
+  display: flex;
+  width: 70%;
+}
+
+.pokemon-card-info-cont {
+  margin-top: 10px;
+  font-size: 18px;
+  background-color: yellow;
+
+  color: black;
+  width: 70%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-card-info-cont p {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 0px;
+  margin: 0px;
+}
+
+/***********************************************************************************************************/
+
+.player-info {
+  font-size: 15px;
+  padding: 10px;
+}
+
+.logged-links {
+  float: right;
+}

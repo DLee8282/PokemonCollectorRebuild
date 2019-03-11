@@ -1,0 +1,64 @@
+<div class="container mt-5 " id="collection-preview-container">
+  <div class="row justify-content-center">
+    <div class="col justify-content-center " id="collection-preview-cont">
+      <div
+        class="alert alert-danger alert-dismissible fade show d-none"
+        id="no-pokemon-alert"
+        role="alert"
+      >
+        <img src="http://i64.tinypic.com/2nhqjbp.png" alt="" />
+
+        <strong>You don't have any pokemon yet...</strong>
+
+        <img
+          src="http://i65.tinypic.com/27zauqe.png"
+          alt="Image and video hosting by TinyPic"
+        />
+
+        <img
+          src="http://i63.tinypic.com/33vi1ye.png"
+          alt="Image and video hosting by TinyPic"
+        />
+
+        <img
+          src="http://i65.tinypic.com/14ipw0p.png"
+          alt="Image and video hosting by TinyPic"
+        />
+
+        <a href="http://tinypic.com?ref=14ipw0p" target="_blank"></a>
+        <button
+          id="login-alert"
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="onAlertClose()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="card-gallery-grid">
+        <div
+          class="pokemon-card-outer text-center"
+          *ngFor="let pokemon of pokemonArr"
+        >
+          <h4 class="pokemon-card-name">{{ pokemon.pokemonName }}</h4>
+          <img src="{{ pokemon.URL }}" class="pokemon-card-img" />
+          <div class="pokemon-card-info-cont">
+            <p>Type: {{ pokemon.pokemonType }}</p>
+            <p>HP: {{ pokemon.hp }}</p>
+            <p>Attack: {{ pokemon.attack }}</p>
+            <p>Defense: {{ pokemon.defense }}</p>
+          </div>
+        </div>
+      </div>
+      <a
+        class="btn btn-block text-center"
+        id="full-collection-btn"
+        routerLink="/collection"
+        >Full Collection</a
+      >
+    </div>
+  </div>
+</div>
+
+<!-- <a href="#" class="btn btn-primary" routerLink="/collection">Full Collection</a> -->

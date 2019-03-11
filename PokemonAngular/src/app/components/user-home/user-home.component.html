@@ -1,0 +1,147 @@
+<!-- <app-logged-nav-bar></app-logged-nav-bar> -->
+<!-- <app-session-nav-bar></app-session-nav-bar> -->
+
+<nav class="navbar navbar-expand-lg " id="logged-nav-bar">
+  <img
+    src="http://i65.tinypic.com/25iyve1.png"
+    alt="Image and video hosting by TinyPic"
+  />
+
+  <h5 class="player-info">{{ username }}</h5>
+  <h5 class="player-info">Score {{ this.score }}</h5>
+  <h5 class="player-info">Credits {{ credit }}</h5>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav  ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link customLink" href="#" routerLink="/userhome"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" routerLink="/shop">Shop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" routerLink="/redeem">Redeem</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" routerLink="/collection"
+          >View Collection</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container  mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="container" id="draw-button-contianer">
+        <div class="row justify-content-center">
+          <div class="col-md-12">
+            <div id="drawButton" class="draw-pokemon-cont text-center">
+              <img
+                class="animated lightSpeedIn"
+                id="catch-em-all-header"
+                src="https://fontmeme.com/permalink/190223/5cfbd92adaffbae8d5b421856e6543f5.png"
+                alt=""
+              />
+
+              <!--(click)="onClickMe()"-->
+              <button
+                class="newPokemon-Generate-Button"
+                data-toggle="modal"
+                data-target="#newpokemonModal"
+                (click)="onClickMe()"
+              >
+                Get a pokemon
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="newpokemonModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="newpokemonModel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div
+            class="modal-content justify-content-center"
+            id="newPokemon-Modal-Content"
+          >
+            <div
+              class="modal-body justify-content-center"
+              id="newPokemon-Modal-Body"
+            >
+              <img
+                src="http://i66.tinypic.com/2rrwdck.png"
+                id="generate-pokemon-pokeball"
+                class="mb-3 animated shake"
+                (click)="onBallClick()"
+              />
+              <div
+                class="pokemon-card-outer text-center d-none "
+                id="generate-pokemon-card"
+              >
+                <!-- *ngFor="let pokemon of pokemonArr" -->
+                <h4 class="pokemon-card-name">{{ this.pokemonName }}</h4>
+
+                <img src="{{ this.pokemonURL }}" class="pokemon-card-img" />
+                <div class="pokemon-card-info-cont">
+                  <p>Type: {{ this.pokemonType }}</p>
+                  <p>HP: {{ this.hp }}</p>
+                  <p>Attack: {{ this.attack }}</p>
+                  <p>Defense: {{ this.defense }}</p>
+                </div>
+              </div>
+              <button
+                id="generate-pokemon-draw-btn"
+                type="button"
+                class="newPokemon-Modal-Buttons d-none"
+                (click)="onClickMe()"
+              >
+                Draw Another!
+              </button>
+              <button
+                type="button"
+                class="newPokemon-Modal-Buttons "
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <app-collection-preview></app-collection-preview>
+    </div>
+  </div>
+</div>

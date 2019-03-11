@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/Pokemon"
+			  auth="Container"
+			  type="javax.sql.DataSource"
+			  url="jdbc:oracle:thin:@tjoseph1901rds.cfpccjh3liom.us-east-1.rds.amazonaws.com:1521:myOrcDb"
+			  username="Project2"
+			  password="ZAQ!2wsxCDE#4rfv"
+			  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+			  driverClassName="oracle.jdbc.OracleDriver"
+			  maxActive="100"
+			  initialSize="25"
+			  minIdle="10"
+			  testWhileIdle="true"
+			  validationQuery="SELECT 1 from DUAL"
+			  />
+</Context>

@@ -1,0 +1,143 @@
+<!-- <app-logged-nav-bar></app-logged-nav-bar> -->
+
+<nav class="navbar navbar-expand-lg " id="logged-nav-bar">
+  <img
+    src="http://i65.tinypic.com/25iyve1.png"
+    alt="Image and video hosting by TinyPic"
+  />
+
+  <h5 class="player-info">{{ username }}</h5>
+  <h5 class="player-info">Score {{ this.score }}</h5>
+  <h5 class="player-info">Credits {{ credit }}</h5>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link customLink" href="#" routerLink="/userhome"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" routerLink="/shop">Shop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" routerLink="/redeem">Redeem</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" routerLink="/collection"
+          >View Collection</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col justify-content-center" id="redeem-form-col">
+      <div class="shop-form-scroll">
+        <img
+          class="animated bounce"
+          id="redeem-header-image"
+          src="https://fontmeme.com/permalink/190224/e057290604f69fe455bee18756e64510.png"
+          alt="pokemon-font"
+        /><br />
+        <button class="shop-buy-btn" (click)="onBuyAll()">Redeem All</button>
+        <form #redeemForm="ngForm" (ngSubmit)="onRedeemSubmit()" novalidate>
+          <button
+            data-toggle="modal"
+            data-target="#newpokemonModal"
+            class="shop-buy-btn"
+            type="submit"
+          >
+            Sell
+          </button>
+
+          <div class="radio-card-grid">
+            <div
+              class="form-check radio-form-item"
+              *ngFor="let pokemon of pokemonArr"
+            >
+              <input
+                class="form-check-input"
+                type="radio"
+                #pokemonCard="ngModel"
+                name="gridRadios"
+                value="{{ pokemon.pokemonId }}"
+                checked
+                [(ngModel)]="pokemonModel.pokemonId"
+              />
+              <div class="pokemon-card-outer">
+                <label class="form-check-label text-light" for="gridRadios1">
+                  {{ pokemon.pokemonName }}
+                </label>
+                <img class="pokemon-card-img" src="{{ pokemon.URL }}" />
+                <div class="pokemon-card-info-cont">
+                  <p>Cost: {{ pokemon.pokemonRarity }}</p>
+                  <br />
+                  <p>Type: {{ pokemon.pokemonType }}</p>
+
+                  <p>Count: {{ pokemonCount }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="newpokemonModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="newpokemonModel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div
+      class="modal-content justify-content-center"
+      id="newPokemon-Modal-Content"
+    >
+      <div class="modal-body justify-content-center" id="newPokemon-Modal-Body">
+        <div class="pokemon-card-outer text-center " id="generate-pokemon-card">
+          <h4 class="pokemon-card-name">{{ this.pokemonName }}</h4>
+
+          <img src="{{ this.pokemonURL }}" class="pokemon-card-img" />
+          <div class="pokemon-card-info-cont">
+            <p>Type: {{ this.pokemonType }}</p>
+            <p>HP: {{ this.hp }}</p>
+            <p>Attack: {{ this.attack }}</p>
+            <p>Defense: {{ this.defense }}</p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="newPokemon-Modal-Buttons "
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

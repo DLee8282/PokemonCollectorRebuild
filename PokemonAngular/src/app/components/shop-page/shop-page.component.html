@@ -1,0 +1,190 @@
+<nav class="navbar navbar-expand-lg  logged-nav">
+  <!-- <ul>
+    <li class="nav-item ">Score {{ this.score }}</li>
+    <li class="nav-item ">{{ username }}</li>
+    <li class="nav-item ">Credits {{ credit }}</li>
+  </ul> -->
+
+  <img
+    src="http://i65.tinypic.com/25iyve1.png"
+    alt="Image and video hosting by TinyPic"
+  />
+  <h5 class="player-info">{{ username }}</h5>
+  <h5 class="player-info">Score {{ this.score }}</h5>
+  <h5 class="player-info">Credits {{ credit }}</h5>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link customLink" href="#" routerLink="/userhome"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" routerLink="/shop">Shop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" routerLink="/redeem">Redeem</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" routerLink="/collection"
+          >View Collection</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link customLink" href="#" (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col"> -->
+<div class="container " id="shop-form-container">
+  <div class="row justify-content-center">
+    <div class="col justify-content-center" id="shop-form-col">
+      <div class="shop-form-scroll">
+        <form #buyForm="ngForm" (ngSubmit)="onBuySubmit()" novalidate>
+          <div id="shop-form-header">
+            <img
+              class="animated shake"
+              id="poke-shop-header"
+              src="https://fontmeme.com/permalink/190223/7f951f27330efe3f5e717c68950edf06.png"
+              alt=""
+            />
+            <button
+              data-toggle="modal"
+              data-target="#newpokemonModal"
+              class="shop-buy-btn"
+              type="submit"
+            >
+              Buy
+            </button>
+            <div
+              class="alert alert-danger alert-dismissible fade show d-none"
+              id="no-credit-alert"
+              role="alert"
+            >
+              <img src="http://i64.tinypic.com/2nhqjbp.png" alt="" />
+
+              <strong>Oops!!</strong> You dont have enough credits.....
+
+              <img
+                src="http://i65.tinypic.com/27zauqe.png"
+                alt="Image and video hosting by TinyPic"
+              />
+              <button
+                id="login-alert"
+                type="button"
+                class="close"
+                aria-label="Close"
+                (click)="onAlertClose()"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="radio-card-grid">
+            <div
+              class="form-check radio-form-item"
+              *ngFor="let pokemon of pokemonArr"
+            >
+              <input
+                class="form-check-input customRadioBtn"
+                type="radio"
+                #pokemonCard="ngModel"
+                name="gridRadios"
+                value="{{ pokemon.pokemonId }}"
+                checked
+                [(ngModel)]="pokemonModel.pokemonId"
+              />
+              <div class="pokemon-card-outer">
+                <label
+                  class="form-check-label shop-poke-name"
+                  for="gridRadios1"
+                >
+                  {{ pokemon.pokemonName }}
+                </label>
+                <img class="pokemon-card-img" src="{{ pokemon.URL }}" />
+                <div class="pokemon-card-info-cont">
+                  <p>Type: {{ pokemon.pokemonType }}</p>
+
+                  <p>HP: {{ pokemon.hp }}</p>
+                  <p>Attack: {{ pokemon.attack }}</p>
+                  <p>Defense: {{ pokemon.defense }}</p>
+                  <p>Cost: {{ pokemon.pokemonRarity }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="newpokemonModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="newpokemonModel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div
+      class="modal-content justify-content-center"
+      id="newPokemon-Modal-Content"
+    >
+      <div class="modal-body justify-content-center" id="newPokemon-Modal-Body">
+        <img
+          src="http://i66.tinypic.com/2rrwdck.png"
+          id="generate-pokemon-pokeball"
+          class="mb-3 animated shake"
+          (click)="onBallClick()"
+        />
+        <div
+          class="pokemon-card-outer text-center d-none "
+          id="generate-pokemon-card"
+        >
+          <!-- *ngFor="let pokemon of pokemonArr" -->
+          <h4 class="pokemon-card-name">{{ this.pokemonName }}</h4>
+
+          <img src="{{ this.pokemonURL }}" class="pokemon-card-img" />
+          <div class="pokemon-card-info-cont">
+            <p>Type: {{ this.pokemonType }}</p>
+            <p>HP: {{ this.hp }}</p>
+            <p>Attack: {{ this.attack }}</p>
+            <p>Defense: {{ this.defense }}</p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="newPokemon-Modal-Buttons "
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div>
+  </div>
+</div> -->

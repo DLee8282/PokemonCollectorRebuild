@@ -1,0 +1,79 @@
+<app-nav-bar></app-nav-bar>
+<div class="container  text-light  main-container">
+  <div class="row">
+    <div class="col-md-6" id="leaderboard-col">
+      <div class="container" id="leaderboard-container">
+        <div class="row">
+          <div class="col-md-12 leaderboard-cont">
+            <h1>Leaderboard</h1>
+            <table
+              class="table table-light table-hover custom_table"
+              id="leaderboardTable"
+            >
+              <thead>
+                <tr>
+                  <th scope="col">Score</th>
+                  <th scope="col">Username</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboardBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 justify-content-center" id="landing-pokeball-cont">
+      <div>
+        <img
+          class="img-center"
+          src="http://i66.tinypic.com/2rrwdck.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6 justify-content-center" id="player-preview-section">
+      <div class="player-preview-heading">
+        <h2>Player Preview</h2>
+      </div>
+      <div id="chart_div"></div>
+    </div>
+    <div class="col-md-6">
+      <form
+        #playerForm="ngForm"
+        (ngSubmit)="onSubmit()"
+        novalidate
+        id="username-container"
+      >
+        <div class="form-check radio-form-item" *ngFor="let user of usersArr">
+          <div class="user-item">
+            <input
+              class="form-check-input"
+              type="radio"
+              #LBUser="ngModel"
+              name="gridRadios"
+              value="{{ user.userId }}"
+              checked
+              [(ngModel)]="chartUserModel.userId"
+            />
+            <label id="username-label">{{ user.username }}</label>
+          </div>
+        </div>
+
+        <!-- <select name="LBSelect" id="leaderBoardSelect">
+          <option
+            value="{{ user.userId }}"
+            *ngFor="let user of usersArr"
+            #leaderboardUser="ngModel"
+            [(ngModel)]="chartUserModel.userId"
+            >{{ user.username }}</option
+          >
+        </select> -->
+        <button class="btn btn-block" type="submit" id="username-submit-btn">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
